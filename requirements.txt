@@ -1,2 +1,4 @@
-torch
+torch torchvision torchaudio --index-url 
+-f https://download.pytorch.org/whl/cu121
+torch==2.3.1+cu121
 numpy
