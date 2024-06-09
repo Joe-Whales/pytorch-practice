@@ -78,7 +78,6 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01)  # Lower learning rate
 num_epochs = 100  # Increase number of epochs
 total_samples = len(train_dataset)
 n_iterations = math.ceil(total_samples / 4)
-print(total_samples, n_iterations)
 
 def evaluate(model):
     # Evaluating the model
@@ -111,6 +110,7 @@ for epoch in range(num_epochs):
     if (epoch + 1) % 5 == 0:
         accuracy = evaluate(model)
         print(f'epoch {epoch + 1}/{num_epochs}, step {i + 1}/{n_iterations}, loss = {loss.item():.4f}, accuracy = {accuracy:.4f}')
+        
         if accuracy == 1:
             print('Perfect accuracy reached!')
             break
