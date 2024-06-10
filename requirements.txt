@@ -3,3 +3,4 @@ numpy
 tensorboard
 torchvision
 scikit-learn
+matplotlib
