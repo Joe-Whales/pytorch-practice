@@ -53,7 +53,8 @@ class NeuralNet(nn.Module):
         self.fc2 = nn.Linear(hidden_size1, hidden_size2)
         self.relu2 = nn.ReLU()
         self.fc3 = nn.Linear(hidden_size2, num_classes)
-        self.softmax = nn.Softmax(dim=1)
+        # no softmax at the end because we are using CrossEntropyLoss
+        # for binary classification, you can use sigmoid and BCELoss
     
     def forward(self, x):
         out = self.fc1(x)
@@ -61,7 +62,7 @@ class NeuralNet(nn.Module):
         out = self.fc2(out)
         out = self.relu2(out)
         out = self.fc3(out)
-        out = self.softmax(out)
+        # bin_out = torch.sigmoid(out)  # For binary classification
         return out
 
 input_size = train_dataset.x.shape[1]
