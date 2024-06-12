@@ -127,7 +127,7 @@ if __name__ == '__main__':
     # scheduler
     step_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
 
-    model = train_model(model, criterion, optimizer, step_lr_scheduler, num_epochs=2)
+    model = train_model(model, criterion, optimizer, step_lr_scheduler, num_epochs=5)
 
     #### Freeze all layers except the final layer
     model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
@@ -145,4 +145,4 @@ if __name__ == '__main__':
     # scheduler
     step_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
 
-    model = train_model(model, criterion, optimizer, step_lr_scheduler, num_epochs=2)
+    model = train_model(model, criterion, optimizer, step_lr_scheduler, num_epochs=5)
