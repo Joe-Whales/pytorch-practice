@@ -1,6 +1,9 @@
-torch==2.3.1+cu121
 numpy
 tensorboard
-torchvision
 scikit-learn
 matplotlib
+opencv-python
+PyYAML
+--index-url https://download.pytorch.org/whl/cu118
+torch
+torchvision
